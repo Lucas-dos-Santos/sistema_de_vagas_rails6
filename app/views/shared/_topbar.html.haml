@@ -8,12 +8,12 @@
         %li.nav-item
           %a.nav-link.active{"aria-current" => "page", :href => "#"} Dashboard
         %li.nav-item
-          %a.nav-link{:href => "#"} Login / Cadastro
+          %a.nav-link{:href => "/users/sign_in"} Login / Cadastro
         %li.nav-item.dropdown
           %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#"} Settings
           %ul.dropdown-menu{"aria-labelledby" => "dropdown01"}
             %li
-              %a.dropdown-item{:href => "#"} Action
+              = link_to "Sair", destroy_user_session_path, class: "dropdown-item", method: :delete
             %li
               %a.dropdown-item{:href => "#"} Another action
             %li

@@ -1,0 +1,25 @@
+.container
+  .row
+    .col-lg-10.col-xl-9.mx-auto
+      .card.flex-row.my-5.border-0.shadow.rounded-3.overflow-hidden.heig
+        .card-img-left.d-none.d-md-flex
+        .card-body.p-4.p-sm-5
+          %h5.card-title.text-center.mb-5.fw-light.fs-5 Registre-se
+          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource 
+            .form-floating.mb-3
+              = f.email_field :email, class: 'form-control', required: true, autofocus: true, placeholder: "Email"
+              %label{:for => "floatingInputEmail"} Email
+            .form-floating.mb-3
+              = f.password_field :password, required: true, class: "form-control", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" }, placeholder: "Password"                                    
+              %label{:for => "floatingPassword"} Senha
+            .form-floating.mb-3
+              = f.password_field :password_confirmation, class: "form-control", required: true, input_html: { autocomplete: "new-password" }, placeholder: "Password"
+              %label{:for => "floatingPassword"} Confirmar senha
+            .d-grid.mb-2
+              = f.submit "Registrar", class: "btn btn-sm py-2 btn-primary btn-login fw-bold text-uppercase"
+            %hr.my-4
+            .container.mt-3.d-flex.justify-content-evenly
+              = render "devise/shared/links"
+
+

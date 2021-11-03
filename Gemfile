@@ -24,6 +24,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'haml'
 gem "haml-rails", "~> 2.0"
+gem "font-awesome-rails"
+gem 'toastr-rails'
 #gem 'kaminari'
 #gem 'kaminari-bootstrap'
 #gem 'ransack'  

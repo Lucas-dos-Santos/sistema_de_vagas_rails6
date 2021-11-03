@@ -1,0 +1,29 @@
+.container
+  .row
+    .col-lg-10.col-xl-9.mx-auto
+      .card.flex-row.my-5.border-0.shadow.rounded-3.overflow-hidden.heig
+        .card-img-left.d-none.d-md-flex
+        .card-body.p-4.p-sm-5
+          %h5.card-title.text-center.mb-5.fw-light.fs-5 Login
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-floating.mb-3
+              = f.email_field :email, class: 'form-control', placeholder: "name@example.com", required: true, autofocus: true
+              %label{:for => "floatingInputEmail"} Email
+            %hr
+            .form-floating.mb-3
+              = f.password_field :password, required: true, class: 'form-control', placeholder: "Password"
+              %label{:for => "floatingPassword"} Password
+            .d-grid.mb-2
+              = f.submit "Entrar", class: "btn btn-sm py-2 btn-primary btn-login fw-bold text-uppercase"
+            %hr.my-4
+            .d-grid.mb-2
+              %button.btn.btn-sm.btn-google.btn-login.fw-bold{:type => "submit"}
+                = fa_icon 'user', class: 'fab fa-google'
+                Entrar com Google
+            .d-grid
+              %button.btn.btn-sm.btn-facebook.btn-login.fw-bold{:type => "submit"}
+                = fa_icon 'user', class: 'fab fa-facebook'
+                Entrar com Facebook
+            .container.mt-3.d-flex.justify-content-evenly
+              = render "devise/shared/links"
+
