@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
+  
+  resources :applicants, only: [:index, :new, :create]
+  resources :positions
+  resources :companies, only: [:new, :edit, :update, :create]
+  
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
