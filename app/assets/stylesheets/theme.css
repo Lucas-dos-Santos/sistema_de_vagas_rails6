@@ -2,10 +2,15 @@
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
+  background-color: #F0F0EB !important;
 }
 
 body {
   padding-top: 56px;
+}
+
+.topbar {
+  background-color: #0062E6 !important;
 }
 
 @media (max-width: 991.98px) {

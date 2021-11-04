@@ -1,12 +1,13 @@
-%nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark{"aria-label" => "Main navigation"}
-  .container-fluid
+%nav.navbar.navbar-expand-lg.fixed-top.navbar-light.bg-light{"aria-label" => "Main navigation"}
+  .container
     %a.navbar-brand{href: root_path} Open Vagas
     %button#navbarSideCollapse.navbar-toggler.p-0.border-0{"aria-label" => "Toggle navigation", :type => "button"}
       %span.navbar-toggler-icon
     #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
       %ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        %li.nav-item
-          %a.nav-link.active{"aria-current" => "page", :href => "#"} Dashboard
+        - if user_signed_in?
+          %li.nav-item
+            = link_to "Minha Empresa", dynamic_url_company, class: "nav-link"
         - unless user_signed_in?
           %li.nav-item
             = link_to "Login / Cadastro", new_user_session_path, class: "nav-link"
