@@ -1,8 +1,12 @@
-
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
   background-color: #F0F0EB !important;
+}
+
+.publish {
+  position: absolute !important;
+  right: 118px !important;
 }
 
 body {

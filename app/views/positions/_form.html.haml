@@ -1,6 +1,6 @@
 .row.mt-3
     .col-8.bg-light.rounded-3.px-4.py-4.mx-auto
-        %h2 Editar Vaga
+        %h2 Publicar Vaga
         = simple_form_for @position do |f|
             .row.row-cols-lg-auto
                 .col
@@ -10,7 +10,7 @@
                     = f.input :remote, input_html: { class: 'mb-3' }
                     = f.input :publish, input_html: { class: 'mb-3' }
                     %hr
-                    = f.submit "Alterar vaga", class: "btn btn-primary text-white"
+                    = f.submit "Criar vaga", class: "btn btn-primary text-white"
                 .col
                     = f.input :city, input_html: { class: 'mb-3' }
                     = f.input :state, input_html: { class: 'mb-3' }

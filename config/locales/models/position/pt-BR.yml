@@ -1,0 +1,27 @@
+pt-BR:
+  activerecord:
+    models:
+      position: Vagas
+    attributes:
+      position:
+        name: Titulo da vaga
+        career: Carreira
+        careers: 
+          developer: Desenvolvedor
+          business_intelligence: Inteligencia de negocios
+          information_technology: Tecnologia da informação
+          design: Designer
+          product: Product Owner
+          technology: Ti
+          other:  Outros
+        contract: Contrato
+        contracts: 
+          clt: CLT
+          pj: PJ
+          match: A combinar
+        remote: Está vaga é totalmente remota?
+        city: Cidade
+        state: Estado
+        summary: Resumo(até 360 caracteres)
+        description: Descrição
+        publish: Está vaga é pública?

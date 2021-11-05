@@ -3,7 +3,7 @@
     %a.navbar-brand{href: root_path} Open Vagas
     %button#navbarSideCollapse.navbar-toggler.p-0.border-0{"aria-label" => "Toggle navigation", :type => "button"}
       %span.navbar-toggler-icon
-    #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
+    .navbar-collapse.offcanvas-collapse
       %ul.navbar-nav.me-auto.mb-2.mb-lg-0
         - if user_signed_in?
           %li.nav-item
@@ -17,4 +17,5 @@
             %ul.dropdown-menu{"aria-labelledby" => "dropdown01"}
               %li
                 = link_to "Sair", destroy_user_session_path, class: "dropdown-item", method: :delete
-            
+        %li.nav-item
+          = link_to "Publicar vaga", new_position_path, class: "btn btn-outline-primary publish"

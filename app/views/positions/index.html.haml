@@ -1,2 +1,27 @@
-%h1 Positions#index
-%p Find me in app/views/positions/index.html.haml
+%h2 Minhas Vagas
+
+.row 
+    .col-9
+        %table.table
+            %thead.thead-dark
+                %tr
+                    %th Titulo
+                    %th Carreira
+                    %th Local
+                    %th Tipo de contrato
+                    %th Candidaturas
+                    %th Ações
+            %tbody
+                - @positions.each do |position|
+                    %tr
+                        %td 
+                            = position.name
+                        %td 
+                            = position.career
+                        %td 
+                            = position.remote
+                        %td 
+                            = position.contract
+                        %td 1(ver detalhes)
+                        %td 
+                            = link_to "Editar", edit_position_path(position)
