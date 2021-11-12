@@ -5,5 +5,5 @@ class Position < ApplicationRecord
   enum contracts: [:clt, :pj, :match]
 
   validates :name, :career, :contract, :city, :state, :summary, presence: true
-
+  has_rich_text :description
 end

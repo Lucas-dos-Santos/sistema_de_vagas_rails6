@@ -39,3 +39,14 @@ $(function () {
     })
 })
 
+
+require("trix")
+require("@rails/actiontext")
+
+$(document).ready(function() {
+  $('#current').text($('.count-text-area').val().length)
+  $('.count-text-area').keyup(function() {
+    var characterCount = $(this).val().length;
+    $('#current').text(characterCount)
+  })
+})
