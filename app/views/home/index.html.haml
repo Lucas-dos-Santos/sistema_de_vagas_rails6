@@ -3,22 +3,26 @@
     %br
     %h1 Open Vagas
     %p Mural de vagas compartilhadas pela comunidade.
-  %form
-    .row
-      .col-sm
-        %label Carreira
-        %input.form-control{:placeholder => "First name", :type => "text"}/
-      .col-sm
-        %label Localidade
-        %input.form-control{:placeholder => "Last name", :type => "text"}/
-      .col-sm
-        %label Local de trabalho
-        %input.form-control{:placeholder => "Last name", :type => "text"}/
-      .col-sm
-        %button.btn.btn-danger{:type => "submit", style: 'margin-top: 31px;'} Pesquisar
+
+  = search_form_for @q, url: root_path do |f|
+    .row 
+      .col-sm 
+        .form-group 
+          = f.label :name_cont, "Carreira"
+          = f.search_field :name_cont, class: 'form-control'
+      .col-sm 
+        .form-group 
+          = f.label :contract_eq, "Modalidade"
+          = f.select :contract_eq, options_from_collection_for_select(@contracts, :second, :first, @q.contract_eq), { include_blank: true }, { class: 'form-control' }
+      .col-sm 
+        .form-group 
+          = f.label :state_eq, "Localidade"
+          = f.select :state_eq, options_from_collection_for_select(Brazil.states, :first, :second, @q.state_eq), { include_blank: true }, { class: 'form-control' }
+      .col-sm.mt-4
+        %button.btn.btn-danger{type: 'submit'} Pesquisar
 
   - @positions.each do |position|
     = render position
 
-  %p.d-block.text-center.mt-3
-    %a{:href => "#"} Paginação
+  .d-flex.justify-content-center.mt-3
+    = paginate @positions

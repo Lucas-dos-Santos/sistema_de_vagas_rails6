@@ -13,7 +13,7 @@
                     = f.submit "Alterar vaga", class: "btn btn-primary text-white"
                 .col
                     = f.input :city, input_html: { class: 'mb-3' }
-                    = f.input :state, input_html: { class: 'mb-3' }
+                    = f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first, input_html: { class: 'mb-3' }
                     = f.input :summary, input_html: { class: 'mb-3' }
                     = f.input :description, input_html: { class: 'mb-3' } 
         
