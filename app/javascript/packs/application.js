@@ -15,8 +15,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-toastr.options = {
-  "closeButton": false,
+global.toastr.options = {
+  "closeButton": true,
   "debug": false,
   "newestOnTop": false,
   "progressBar": true,
@@ -25,31 +25,38 @@ toastr.options = {
   "onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
-  "timeOut": "5000",
+  "timeOut": "3000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
   "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
+  "showMethod": "show",
+  "hideMethod": "hide"
 }
 
 $(function () {
     $('#navbarSideCollapse').on('click', function () {
       $('.offcanvas-collapse').toggleClass('open')
     })
-})
+  })
 
 
 require("trix")
 require("@rails/actiontext")
 
 $(document).ready(function() {
-  cond = $('.count-text-area')
-  if (cond.val() !== undefined) {
-    $('#current').text($('.count-text-area').val().length)
+  if ($('.count-text-area').length) {
+    $('#current').text($('.count-text-area').val().length);
     $('.count-text-area').keyup(function() {
       var characterCount = $(this).val().length;
-      $('#current').text(characterCount)
+      $('#current').text(characterCount);
     })
   }
+
+  $('.copy-url').on('click', function(e) {
+    e.preventDefault();
+    var url = $(this).attr('data-clipboard-text');
+    navigator.clipboard.writeText(url);
+    toastr.success('URL copiada com sucesso');
+  })
+
 })
