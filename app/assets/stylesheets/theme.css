@@ -28,12 +28,15 @@ body {
     padding-left: 1rem;
     overflow-y: auto;
     visibility: hidden;
-    background-color: #343a40;
     transition: transform .3s ease-in-out, visibility .3s ease-in-out;
   }
   .offcanvas-collapse.open {
     visibility: visible;
     transform: translateX(-100%);
+  }
+
+  .publish {
+    position: inherit !important;
   }
 }
 
@@ -79,3 +82,36 @@ body {
 .count-sum {
   text-align: right;
 }
+
+.card-position {
+  border: none !important;
+}
+
+.card-position .card-body {
+  padding: 0px !important;
+}
+
+.group-social-network img{
+  margin: 0px 2px;
+}
+
+.share-copy-icon {
+  background-color: #72869c;
+  border-color: #72869c;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.conteiner-card {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 20px auto;
+}
+
+.cont-index {
+  border-radius: 10px;
+  padding: 0 30px 30px 30px;
+}
+

@@ -16,12 +16,12 @@
                     %tr
                         %td 
                             = position.name
+                        %td
+                            = career_name(position.career)
+                        %td
+                            = modality(position) # aplicar helper
                         %td 
-                            = position.career
-                        %td 
-                            = position.remote
-                        %td 
-                            = position.contract
+                            = contract_name(position.contract)
                         %td 1(ver detalhes)
                         %td 
                             = link_to "Editar", edit_position_path(position)
