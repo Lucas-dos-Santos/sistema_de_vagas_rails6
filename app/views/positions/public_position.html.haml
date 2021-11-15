@@ -1,0 +1,9 @@
+.cont-index.mt-3.bg-light.pt-3
+  %h2= "#{@position.name} - #{@position.company.name}"
+  %p= "#{career_name(@position.career)} - #{@position.city} / #{modality(@position)}, #{@position.state} - #{contract_name(@position.contract)}"
+
+  = @position.description
+
+  %br 
+  %h6 Compartilhar:
+  = render partial: 'shared/social_network', locals: {position: @position}

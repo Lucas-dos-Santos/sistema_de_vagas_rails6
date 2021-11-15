@@ -10,11 +10,8 @@
           %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam officia porro ab, nihil quis earum ratione repudiandae, ipsam neque quidem iusto commodi ipsum dolor cumque repellat fugiat corporis voluptatibus eaque.
           .row 
             .col-6.mt-3
-              %button.btn.btn-danger{type: 'button'} Ver Mais
-              %button.btn.btn-success{type: 'button'} Candidatar-se
+              = link_to "Ver Mais", public_position_path(position.slug), class: 'btn btn-danger'
+              = link_to "Candidatar-se", public_position_path(position.slug), class: 'btn btn-success'
 
             .col-6.mt-4.group-social-network.d-flex.justify-content-end
-              = link_to image_tag('linkedin.svg', alt: 'Icone do LinkedIn', height: '32', width: '32'), "https://www.linkedin.com/sharing/share-offsite/?url=#{url_position(position)}"
-              = link_to image_tag('whatsapp.svg', alt: 'Icone do Whatsapp', height: '32', width: '32'), "https://wa.me/?text=#{text_position(position)}"
-              = link_to image_tag('twitter.svg', alt: 'Icone do Twitter', height: '32', width: '32'), "https://twitter.com/intent/tweet?text=#{text_position(position)}"
-              = image_tag('copy.svg', alt: 'Icone do copiar', height: '32', width: '32', class: 'share-copy-icon copy-url', data: {'clipboard-text': url_position(position)})
+              = render partial: 'shared/social_network', locals: {position: position}

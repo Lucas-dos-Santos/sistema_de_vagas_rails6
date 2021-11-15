@@ -51,12 +51,4 @@ $(document).ready(function() {
       $('#current').text(characterCount);
     })
   }
-
-  $('.copy-url').on('click', function(e) {
-    e.preventDefault();
-    var url = $(this).attr('data-clipboard-text');
-    navigator.clipboard.writeText(url);
-    toastr.success('URL copiada com sucesso');
-  })
-
 })
