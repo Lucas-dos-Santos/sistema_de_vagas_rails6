@@ -11,7 +11,10 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body.back-body
-    = toastr_flash 
     = render 'shared/topbar'
+    - if flash[:suc].present? || flash[:er].present?
+      = render 'shared/flash_messages'
+    - else
+      = toastr_flash 
     %main.container
       = yield

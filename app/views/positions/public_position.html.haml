@@ -10,7 +10,10 @@
 
   .wrapper-form-applicant 
     - if user_signed_in?
-      %p= "Insira suas informações abaixo para se candidatar à vaga de #{@position.name}"
-      = render 'applicants/form'
+      - if !UserApplicantQuery.new(current_user.id, @position.id).call
+        %p= "Insira suas informações abaixo para se candidatar à vaga de #{@position.name}"
+        = render 'applicants/form'
+      - else
+        %p.mt-2 Você já aplicou para esta vaga!
     - else
       %p Você precisa estar logado para se candidatar

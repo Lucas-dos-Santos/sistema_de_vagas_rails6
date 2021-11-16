@@ -11,7 +11,9 @@
           .row 
             .col-6.mt-3
               = link_to "Ver Mais", public_position_path(position.slug), class: 'btn btn-danger'
-              = link_to "Candidatar-se", public_position_path(position.slug), class: 'btn btn-success'
+              - if user_signed_in?
+                - if !UserApplicantQuery.new(current_user.id, position.id).call
+                  = link_to "Candidatar-se", public_position_path(position.slug), class: 'btn btn-success'
 
             .col-6.mt-4.group-social-network.d-flex.justify-content-end
               = render partial: 'shared/social_network', locals: {position: position}

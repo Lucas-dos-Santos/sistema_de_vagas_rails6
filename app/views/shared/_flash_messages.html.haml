@@ -1,0 +1,17 @@
+- if flash[:suc].present?
+  - @icon = 'success'
+  - @title = 'Tudo certo'
+  - @message = flash[:suc]
+- else
+  - @icon = 'error'
+  - @title = 'Erro!'
+  - @message = flash[:err]
+
+:javascript
+  Swal.fire({
+    title: "#{@title}",
+    text: "#{@message}",
+    icon: "#{@icon}",
+    backdrop: 'rgba(0,0,123,0.4)'
+  })
+  

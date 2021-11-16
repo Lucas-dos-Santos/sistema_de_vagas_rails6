@@ -10,6 +10,9 @@ import "channels"
 import 'bootstrap'
 import '../stylesheets/application'
 global.toastr = require("toastr")
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+window.Swal = Swal
 
 Rails.start()
 Turbolinks.start()
