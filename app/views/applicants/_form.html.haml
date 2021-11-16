@@ -1,0 +1,8 @@
+= simple_form_for @applicant do |f|
+  = f.hidden_field :position_id, value: @position.id
+  = f.input :name
+  %br
+  = f.input :email, input_html: {value: current_user.email}
+  %br
+  = f.input :phone
+  = f.submit 'Aplicar vaga', class: 'btn btn-primary mt-3'
