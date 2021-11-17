@@ -1,2 +1,20 @@
-%h1 Applicants#index
-%p Find me in app/views/applicants/index.html.haml
+.mt-4.bg-light.py-3.rounded-3.px-3
+  %h3= "Candidaturas da vaga: #{@position.name}"
+  %br
+  .row 
+    .col-12
+      %table.table
+        %thead.thead-dark
+          %tr
+            %th Nome
+            %th E-mail
+            %th Telefone
+            %th Ações
+        %tbody
+          - @applicants.each do |applicant|
+            %tr
+              %td= applicant.name
+              %td= applicant.email
+              %td= applicant.phone
+              %td= "ações"
+                  

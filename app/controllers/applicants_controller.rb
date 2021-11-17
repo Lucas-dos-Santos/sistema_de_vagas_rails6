@@ -1,5 +1,8 @@
 class ApplicantsController < ApplicationController
+  before_action :set_position, only: [:index]
+
   def index
+    @applicants = @position.applicants
   end
 
   def new
@@ -23,6 +26,14 @@ class ApplicantsController < ApplicationController
   end
 
   private
+
+  def set_position
+    begin
+      @position= current_user.company.positions.find(params[:position_id])
+    rescue 
+      redirect_to positions_path
+    end
+  end
 
   def applicant_params
     params.require(:applicant).permit(:name, :email, :phone, :position_id)

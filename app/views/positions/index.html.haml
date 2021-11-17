@@ -1,27 +1,30 @@
-%h2.mt-4 Minhas Vagas
+.mt-4.bg-light.py-3.rounded-3.px-3
+    %h2 Minhas Vagas
 
-.row 
-    .col-9
-        %table.table
-            %thead.thead-dark
-                %tr
-                    %th Titulo
-                    %th Carreira
-                    %th Local
-                    %th Tipo de contrato
-                    %th Candidaturas
-                    %th Ações
-            %tbody
-                - @positions.each do |position|
+    .row 
+        .col-12
+            %table.table
+                %thead.thead-dark
                     %tr
-                        %td 
-                            = position.name
-                        %td
-                            = career_name(position.career)
-                        %td
-                            = modality(position) # aplicar helper
-                        %td 
-                            = contract_name(position.contract)
-                        %td 1(ver detalhes)
-                        %td 
-                            = link_to "Editar", edit_position_path(position)
+                        %th Titulo
+                        %th Carreira
+                        %th Local
+                        %th Tipo de contrato
+                        %th Candidaturas
+                        %th Ações
+                %tbody
+                    - @positions.each do |position|
+                        %tr
+                            %td 
+                                = position.name
+                            %td
+                                = career_name(position.career)
+                            %td
+                                = modality(position) # aplicar helper
+                            %td 
+                                = contract_name(position.contract)
+
+                            %td= link_to "Ver aplicações(#{position.applicants.count})", position_applicants_path(position.id), class: 'btn btn-warning btn-sm' 
+
+                            %td 
+                                = link_to "Editar", edit_position_path(position), class: 'btn btn-primary btn-sm'
