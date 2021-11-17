@@ -46,7 +46,7 @@ $(function () {
 require("trix")
 require("@rails/actiontext")
 
-$(document).ready(function() {
+$(document).on('ready turbolinks:load', function() {
   if ($('.count-text-area').length) {
     $('#current').text($('.count-text-area').val().length);
     $('.count-text-area').keyup(function() {
@@ -54,4 +54,10 @@ $(document).ready(function() {
       $('#current').text(characterCount);
     })
   }
+  $('#copy-url').on('click', function(e) {
+    e.preventDefault();
+    var url = $(this).attr('data-clipboard-text');
+    navigator.clipboard.writeText(url);
+    toastr.success('URL copiada com sucesso');
+  })
 })
