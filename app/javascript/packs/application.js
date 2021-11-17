@@ -54,6 +54,7 @@ $(document).on('ready turbolinks:load', function() {
       $('#current').text(characterCount);
     })
   }
+
   $('#copy-url').on('click', function(e) {
     e.preventDefault();
     var url = $(this).attr('data-clipboard-text');

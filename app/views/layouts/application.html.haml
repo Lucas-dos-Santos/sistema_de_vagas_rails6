@@ -12,9 +12,13 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body.back-body
     = render 'shared/topbar'
-    - if flash[:suc].present? || flash[:er].present?
+    - if flash[:suc].present? || flash[:err].present?
       = render 'shared/flash_messages'
     - else
       = toastr_flash 
     %main.container
       = yield
+    #modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modalLabel", "data-bs-backdrop" => "static", "data-bs-keyboard" => "false", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+            

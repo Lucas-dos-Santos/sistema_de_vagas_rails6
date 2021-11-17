@@ -21,7 +21,8 @@
                 = link_to "Sair", destroy_user_session_path, class: "dropdown-item", method: :delete
         %li.nav-item
           = link_to "Publicar vaga", new_position_path, onclick: 'refresh_page()',   class: "btn btn-outline-primary publish"
-
+%br
+%br
 :javascript
   function refresh_page() {
     $(document).ready(function () {

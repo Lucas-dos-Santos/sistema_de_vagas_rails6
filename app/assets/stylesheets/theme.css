@@ -9,8 +9,8 @@ body {
   right: 118px !important;
 }
 
-body {
-  padding-top: 56px;
+.fixed-top {
+  padding-right: 0 !important;
 }
 
 .topbar {
@@ -116,3 +116,6 @@ body {
   padding: 0 30px 30px 30px;
 }
 
+.modal-open{
+  padding: 0 !important;
+}

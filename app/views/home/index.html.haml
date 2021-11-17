@@ -1,4 +1,4 @@
-.cont-index.mt-3.bg-light
+.cont-index.mt-4.bg-light
   %header.text-center
     %br
     %h1 Open Vagas
@@ -20,7 +20,7 @@
           = f.select :state_eq, options_from_collection_for_select(Brazil.states, :first, :second, @q.state_eq), { include_blank: true }, { class: 'form-control' }
       .col-sm.mt-4
         %button.btn.btn-danger{type: 'submit'} Pesquisar
-
+  
   - @positions.each do |position|
     = render position
 
