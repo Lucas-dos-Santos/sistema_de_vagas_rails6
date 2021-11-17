@@ -5,5 +5,5 @@ RUN npm install -g yarn
 RUN mkdir /usr/src/openvagas
 WORKDIR /usr/src/openvagas
 ADD . /usr/src/openvagas
-RUN gem install bundler -v 2.2.3
+RUN gem install bundler -v 2.2.30
 RUN bundle install
