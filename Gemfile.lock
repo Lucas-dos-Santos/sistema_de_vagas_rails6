@@ -153,6 +153,7 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -311,6 +312,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.3)
   mailcatcher
+  pg (~> 1.2)
   pry
   pry-rails
   puma (~> 5.0)
