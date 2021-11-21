@@ -27,6 +27,7 @@ gem 'toastr-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'  
+gem 'rubyzip'
 #gem 'select2-rails'
 
 group :development, :test do
@@ -51,9 +52,9 @@ group :development do
   gem 'daemons'
 end
 
-group :production do
-  gem "pg", "~> 1.2"
-end
+  # group :production do
+  #   gem "pg", "~> 1.2"
+  # end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

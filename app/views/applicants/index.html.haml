@@ -1,5 +1,10 @@
 .mt-4.bg-light.py-3.rounded-3.px-3
-  %h3= "Candidaturas da vaga: #{@position.name}"
+  %h3
+    = "Candidaturas da vaga: #{@position.name}" 
+    %br
+    - if @applicants.size > 0
+      = link_to 'Exportar CSV', position_applicants_path(@position, format: 'csv'), class: 'btn btn-sm btn-outline-secondary'
+      = link_to 'Enviar Curriculos por email', position_applicants_path(@position, format: 'zip'), class: 'btn btn-sm btn-outline-danger'
   %br
   .row 
     .col-12
@@ -10,7 +15,6 @@
             %th E-mail
             %th Telefone
             %th Curriculo
-            %th Ações
         %tbody
           - @applicants.each do |applicant|
             %tr
@@ -18,5 +22,4 @@
               %td= applicant.email
               %td= applicant.phone
               %td= link_to 'Download', rails_blob_path(applicant.resume, disposition: "attachment"), class: 'btn btn-sm btn-outline-primary'
-              %td= link_to 'Exportar CSV', position_applicants_path(@position, format: 'csv'), class: 'btn btn-sm btn-secondary'
                   

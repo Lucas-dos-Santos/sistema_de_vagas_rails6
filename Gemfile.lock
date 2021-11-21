@@ -153,7 +153,6 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -228,6 +227,7 @@ GEM
     ruby2_keywords (0.0.5)
     ruby_parser (3.18.0)
       sexp_processor (~> 4.16)
+    rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -311,7 +311,6 @@ DEPENDENCIES
   kaminari
   listen (~> 3.3)
   mailcatcher
-  pg (~> 1.2)
   pry
   pry-rails
   puma (~> 5.0)
@@ -319,6 +318,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   ransack
   rspec-rails
+  rubyzip
   sass-rails (>= 6)
   simple_form
   spring

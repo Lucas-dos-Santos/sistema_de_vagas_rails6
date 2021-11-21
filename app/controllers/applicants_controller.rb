@@ -7,7 +7,11 @@ class ApplicantsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @position.applicants.as_csv }
-
+      format.zip do
+        UserMailer.export_resume(current_user, @position).deliver_now
+        flash[:suc] = 'Curriculos enviados. Verifique seu e-mail.'
+        redirect_to action: :index
+      end
     end
   end
 
@@ -20,7 +24,7 @@ class ApplicantsController < ApplicationController
     
     respond_to do |format|
       if @applicant.save
-        flash.now[:suc] = 'Vaga aplicada com sucesso!'
+        flash[:suc] = 'Vaga aplicada com sucesso!'
         format.html{ redirect_to public_position_path(@applicant.position.slug) }
         format.js { render 'applicants/success'}
       else
