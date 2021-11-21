@@ -3,6 +3,12 @@ class ApplicantsController < ApplicationController
 
   def index
     @applicants = @position.applicants
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @position.applicants.as_csv }
+
+    end
   end
 
   def new
@@ -14,11 +20,11 @@ class ApplicantsController < ApplicationController
     
     respond_to do |format|
       if @applicant.save
-        flash[:suc] = 'Vaga aplicada com sucesso!'
+        flash.now[:suc] = 'Vaga aplicada com sucesso!'
         format.html{ redirect_to public_position_path(@applicant.position.slug) }
         format.js { render 'applicants/success'}
       else
-        flash[:err] = 'Houve algum erro ao aplicar, tente novamente'
+        flash.now[:err] = 'Houve algum erro ao aplicar, tente novamente'
         format.html{ render 'positions/public_position' }
         format.js { render partial: 'applicants/new' }
       end
@@ -36,6 +42,6 @@ class ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.require(:applicant).permit(:name, :email, :phone, :position_id)
+    params.require(:applicant).permit(:name, :email, :phone, :position_id, :resume)
   end
 end

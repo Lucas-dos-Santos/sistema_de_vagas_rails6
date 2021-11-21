@@ -9,6 +9,7 @@
             %th Nome
             %th E-mail
             %th Telefone
+            %th Curriculo
             %th Ações
         %tbody
           - @applicants.each do |applicant|
@@ -16,5 +17,6 @@
               %td= applicant.name
               %td= applicant.email
               %td= applicant.phone
-              %td= "ações"
+              %td= link_to 'Download', rails_blob_path(applicant.resume, disposition: "attachment"), class: 'btn btn-sm btn-outline-primary'
+              %td= link_to 'Exportar CSV', position_applicants_path(@position, format: 'csv'), class: 'btn btn-sm btn-secondary'
                   

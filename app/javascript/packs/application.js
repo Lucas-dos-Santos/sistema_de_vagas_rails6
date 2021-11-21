@@ -36,13 +36,6 @@ global.toastr.options = {
   "hideMethod": "hide"
 }
 
-$(function () {
-    $('#navbarSideCollapse').on('click', function () {
-      $('.offcanvas-collapse').toggleClass('open')
-    })
-  })
-
-
 require("trix")
 require("@rails/actiontext")
 

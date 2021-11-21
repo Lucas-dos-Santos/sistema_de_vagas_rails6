@@ -27,7 +27,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "127.0.0.1:5432:5432"
+      - "127.0.0.1:5434:5434"
   mailcatcher:
     restart: on-failure:10
     image: dockage/mailcatcher:0.7.1

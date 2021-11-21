@@ -5,4 +5,8 @@
   = f.input :email, input_html: {value: current_user.email}
   %br
   = f.input :phone
+  = f.label :resume, class: 'mt-3 mb-2'
+  = f.input :resume, as: :file, label: false
+  = f.hint 'Apenas arquivos PDF'
+  %br
   = f.submit 'Aplicar vaga', class: 'btn btn-primary mt-3'
