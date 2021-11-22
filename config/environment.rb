@@ -11,9 +11,9 @@ ActionMailer::Base.smtp_settings = {
 
   authentication: :plain,
 
-  user_name: ENV['SENDGRID_USERNAME'],
+  user_name: ENV['SENDGRID_USERNAME'].to_s,
 
-  password: ENV['SENDGRID_PASSWORD'],
+  password: ENV['SENDGRID_PASSWORD'].to_s,
 
   domain: 'heroku.com',
 
