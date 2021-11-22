@@ -12,8 +12,8 @@ Rails.application.configure do
     port: '587',
   
     authentication: :plain,
-  
-    user_name: 'lucas.ffr2014@gmail.com',
+
+    user_name: 'lucas.ffr2020@gmail.com',
   
     password: 'babuino123babuino',
   
