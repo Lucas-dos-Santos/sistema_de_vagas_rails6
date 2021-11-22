@@ -13,9 +13,9 @@ Rails.application.configure do
   
     authentication: :plain,
   
-    user_name: 'app238636950@heroku.com',
+    user_name: 'lucas.ffr2014@gmail.com',
   
-    password: 'zelf0jne5329',
+    password: 'babuino123babuino',
   
     domain: 'heroku.com',
   
