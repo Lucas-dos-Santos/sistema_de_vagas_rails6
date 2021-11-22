@@ -6,21 +6,13 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   ActionMailer::Base.smtp_settings = {
-
     address: 'smtp.sendgrid.net',
   
     port: '587',
   
-    authentication: :plain,
-
-    user_name: 'lucas.ffr2020@gmail.com',
+    user_name: 'apikey',
   
-    password: 'babuino123babuino',
-  
-    domain: 'heroku.com',
-  
-    enable_starttls_auto: true
-  
+    password: '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',
   }
   ActionMailer::Base.delivery_method = :smtp
   # Eager load code on boot. This eager loads most of Rails and
