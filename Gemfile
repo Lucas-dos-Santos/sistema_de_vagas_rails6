@@ -27,6 +27,7 @@ gem 'toastr-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'  
+gem "aws-sdk-s3", require: false
 gem 'rubyzip'
 #gem 'select2-rails'
 
