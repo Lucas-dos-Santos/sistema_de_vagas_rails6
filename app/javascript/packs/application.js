@@ -5,8 +5,10 @@
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
-import 'jquery'
 import * as ActiveStorage from "@rails/activestorage"
+var jQuery = require('jquery')
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
 import "channels"
 import 'bootstrap'
 import '../stylesheets/application'
@@ -14,6 +16,7 @@ global.toastr = require("toastr")
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 window.Swal = Swal
+
 
 Rails.start()
 Turbolinks.start()
