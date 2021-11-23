@@ -1,0 +1,9 @@
+---
+:concurrency: 10
+:verbose: false
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 10
+:queues:
+  - mailers

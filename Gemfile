@@ -29,6 +29,8 @@ gem 'bootstrap4-kaminari-views'
 gem 'ransack'  
 gem "aws-sdk-s3", require: false
 gem 'rubyzip'
+gem 'redis'
+gem 'sidekiq'
 #gem 'select2-rails'
 
 group :development, :test do
@@ -37,7 +39,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'rspec-rails'
-  gem 'sqlite3', '~> 1.4'
+  gem "pg", "~> 1.2"
 end
 
 group :development do

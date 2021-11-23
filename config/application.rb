@@ -32,6 +32,7 @@ module OpenVagas
     config.load_defaults 6.1
     
     set_locale_configs_and_timezone
+    config.active_job.queue_adapter = :sidekiq
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

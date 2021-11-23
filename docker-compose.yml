@@ -27,7 +27,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "127.0.0.1:5434:5434"
+      - "127.0.0.1:5433:5433"
   mailcatcher:
     restart: on-failure:10
     image: dockage/mailcatcher:0.7.1
@@ -43,6 +43,16 @@ services:
       - "127.0.0.1:6379:6379"
     logging:
       driver: none
+  sidekiq:
+    image: open_vagas_app
+    depends_on:
+      - app
+      - db
+      - redis
+    command: bundle exec sidekiq -C config/sidekiq.yml && bundle exec sidekiq -q default
+    env_file: .env.development
+    volumes:
+      - .:/usr/src/openvagas
 volumes:
   postgresql:
   redis:

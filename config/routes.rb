@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+
   root 'home#index'
   # get '/vaga/:slug', action: :public_position, controller: :positions, as: :public_position
   get '/vaga/:slug', to: "positions#public_position", as: :public_position
