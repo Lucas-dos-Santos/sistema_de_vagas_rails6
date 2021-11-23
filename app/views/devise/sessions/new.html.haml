@@ -16,11 +16,11 @@
               = f.submit "Entrar", class: "btn btn-sm py-2 btn-primary btn-login fw-bold text-uppercase"
             %hr.my-4
             .d-grid.mb-2
-              %button.btn.btn-sm.btn-google.btn-login.fw-bold{:type => "submit"}
+              %button.btn.btn-sm.btn-google.btn-login.fw-bold{:type => "submit", disabled: "disabled"}
                 = fa_icon 'user', class: 'fab fa-google'
                 Entrar com Google
             .d-grid
-              %button.btn.btn-sm.btn-facebook.btn-login.fw-bold{:type => "submit"}
+              %button.btn.btn-sm.btn-facebook.btn-login.fw-bold{:type => "submit", disabled: "disabled"}
                 = fa_icon 'user', class: 'fab fa-facebook'
                 Entrar com Facebook
             .container.mt-3.d-flex.justify-content-evenly
