@@ -49,7 +49,7 @@ services:
       - app
       - db
       - redis
-    command: bundle exec sidekiq -C config/sidekiq.yml && bundle exec sidekiq -q default
+    command: bundle exec sidekiq -C config/sidekiq.yml 
     env_file: .env.development
     volumes:
       - .:/usr/src/openvagas
