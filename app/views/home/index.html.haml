@@ -1,7 +1,8 @@
 .cont-index.mt-4.bg-light
   %header.text-center
     %br
-    %h1 Open Vagas
+    .div-homepage
+      %img{ src: "https://image.flaticon.com/icons/png/512/138/138204.png" }
     %p Mural de vagas compartilhadas pela comunidade.
 
   = search_form_for @q, url: root_path do |f|

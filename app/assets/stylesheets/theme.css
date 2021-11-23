@@ -114,6 +114,7 @@ body {
 .cont-index {
   border-radius: 10px;
   padding: 0 30px 30px 30px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
 }
 
 .modal-open{
@@ -154,4 +155,8 @@ button.toast-close-button {
 
 .div-img img{
   height: 30px;
+}
+
+.div-homepage img {
+  width: 200px;
 }
