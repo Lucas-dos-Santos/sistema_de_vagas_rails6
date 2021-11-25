@@ -40,6 +40,8 @@ group :development, :test do
   gem 'awesome_print'
   gem 'rspec-rails'
   gem "pg", "~> 1.2"
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -59,5 +61,8 @@ group :production do
   gem "pg", "~> 1.2"
 end
 
+group :test do
+  gem 'database_cleaner-active_record'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
